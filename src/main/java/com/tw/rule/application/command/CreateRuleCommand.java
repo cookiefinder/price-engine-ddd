@@ -1,4 +1,4 @@
-package com.tw.rule.application.service.command;
+package com.tw.rule.application.command;
 
 import com.tw.rule.domain.model.Calculator;
 import com.tw.rule.domain.model.Condition;

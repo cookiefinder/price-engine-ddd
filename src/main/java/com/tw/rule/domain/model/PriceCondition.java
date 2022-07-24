@@ -13,7 +13,7 @@ public class PriceCondition extends Condition {
 
     @Override
     public boolean applicable(Order order) {
-        BigDecimal amount = order.getOrderAmount();
+        BigDecimal amount = order.getOriginalAmount();
         return amount.compareTo(maxPrice) < 0 && amount.compareTo(minPrice) > 0;
     }
 }

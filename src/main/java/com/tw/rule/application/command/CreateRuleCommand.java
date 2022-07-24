@@ -19,6 +19,6 @@ public class CreateRuleCommand {
     private Calculator calculator;
 
     public Rule toRule() {
-        return new Rule(name, description, ruleType, condition, calculator, true);
+        return Rule.init(name, description, ruleType, condition, calculator, true);
     }
 }

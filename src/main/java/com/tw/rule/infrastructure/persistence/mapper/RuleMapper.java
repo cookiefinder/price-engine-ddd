@@ -44,7 +44,7 @@ public class RuleMapper {
                 return null;
             }
             return new Rule(new RuleId(rulePo.getId()),
-                    new PromotionCode(rulePo.getCode()),
+                    PromotionCode.of(rulePo.getCode()),
                     rulePo.getName(),
                     rulePo.getDescription(),
                     rulePo.getType(),

@@ -17,5 +17,5 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 })
 public abstract class Calculator {
     private CalculatorType type;
-    abstract Order calculate(Order order);
+    abstract CalculatedResult calculate(Order order);
 }

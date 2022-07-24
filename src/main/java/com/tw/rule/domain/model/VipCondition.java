@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VipCondition extends Condition {
-    private Boolean isVip;
+    private Boolean justForVip;
 
     @Override
     public boolean applicable(Order order) {
-        if (isVip) {
+        if (justForVip) {
             return order.getCustomer().isVip();
         }
         return true;

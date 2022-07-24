@@ -11,11 +11,10 @@ public class MoneyOffCalculator extends Calculator {
     private BigDecimal freeAmount;
 
     @Override
-    public Order calculate(Order order) {
-        BigDecimal amount = order.getTotalAmount();
+    public CalculatedResult calculate(Order order) {
+        BigDecimal amount = order.getOriginalAmount();
         BigDecimal multiple = amount.divide(amountLimit, RoundingMode.FLOOR);
         BigDecimal discountedPrice = amount.subtract(freeAmount.multiply(multiple));
-        order.setTotalAmount(discountedPrice);
-        return order;
+        return CalculatedResult.of(discountedPrice);
     }
 }

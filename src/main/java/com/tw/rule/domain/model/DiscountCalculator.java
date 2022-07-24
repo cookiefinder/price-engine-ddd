@@ -13,9 +13,7 @@ public class DiscountCalculator extends Calculator {
     private BigDecimal discount;
 
     @Override
-    public Order calculate(Order order) {
-        BigDecimal discountedPrice = order.getTotalAmount().multiply(discount);
-        order.setTotalAmount(discountedPrice);
-        return order;
+    public CalculatedResult calculate(Order order) {
+        return CalculatedResult.of(order.getOriginalAmount().multiply(discount));
     }
 }

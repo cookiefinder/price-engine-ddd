@@ -10,6 +10,16 @@ public class OrderItem {
     private BigDecimal price;
     private Long number;
 
+    private OrderItem(ProductSku sku, BigDecimal price, Long number) {
+        this.sku = sku;
+        this.price = price;
+        this.number = number;
+    }
+
+    public static OrderItem init(ProductSku sku, BigDecimal price, Long number) {
+        return new OrderItem(sku, price, number);
+    }
+
     public BigDecimal getAmount() {
         return price.multiply(BigDecimal.valueOf(number));
     }
